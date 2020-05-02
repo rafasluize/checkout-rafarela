@@ -1,0 +1,17 @@
+@import './../../assets/scss/variables';
+.steps{
+    color: $primary;
+    .step{
+        &.checked{
+            .number{
+                background-color: $primary;
+            }
+        }
+        .number{
+            font-weight: 700;
+            font-size:  .9rem;
+            border: 1.3px solid $primary;
+            padding: 2px 5px;
+        }
+    }
+}

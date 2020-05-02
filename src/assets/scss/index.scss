@@ -1,0 +1,64 @@
+@import "./variables";
+body {
+  margin: 0;
+  font-family: 'Verdana', sans-serif !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+body, html{
+  font-size: 16px;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+::-moz-selection {
+	color: $default !important;
+	background-color: $primary !important
+}
+
+::selection {
+	color: $default !important;
+	background-color: $primary !important
+}
+
+.bg-default {
+	background-color: $default !important;
+}
+
+.text-default {
+	color: #282828 !important;
+}
+
+.bg-primary {
+	background-color: $primary !important;
+}
+
+.text-primary {
+	color: $primary !important;
+}
+
+.border-primary {
+	border: 1px solid $primary !important;
+}
+
+
+.btn-primary {
+	background-color: $primary !important;
+	border-radius: 8px;
+	font-weight: 700;
+	color: $default !important;
+	border-color: $primary !important;
+	box-shadow: none !important;
+
+	&:hover,
+	:active,
+	:focus {
+		border-color: #00E600 !important;
+		box-shadow: 0px 3px 6px #00000040 !important;
+		color: #000 !important
+	}
+
+}

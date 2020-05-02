@@ -1,0 +1,50 @@
+@import "../assets/scss/variables";
+.checkout-rafarela{
+    flex-wrap: wrap;
+    .title-main{
+        background-color: $primary;
+        position: relative;
+        h1{
+            font-size: 1.25rem;
+            width: 207px;
+            font-weight: 700;
+        }
+        .bg-card{
+            position: absolute;
+            right: -50px;
+            width: 367px;
+            height: 248px;
+            background-image: url(/img/card.svg);
+            background-repeat: no-repeat;
+            background-size: contain;
+        }
+    }
+    
+}
+
+
+@media (max-width: 1199.98px){
+    .checkout-rafarela{
+        .title-main{
+            width: 100%;
+            padding-bottom: 110px !important;
+            .bg-card{
+                right: 0;
+                left: 0;
+                width: 280px;
+                height: 172px;
+                margin: auto;
+                background-position: center;
+            }
+        }
+    }
+}
+
+@media (min-width: 1200px){
+    .checkout-rafarela{
+        min-height: 100vh;
+        .content{
+            flex: 1;
+        }
+    }
+}
