@@ -46,14 +46,38 @@ export default function Checkout() {
                 }
 
 
-                <div className="form">
-                    <div className="row">
-                        <div className="col-12">
+                <div className="form my-5">
+                    <div className="row mb-5">
+                        <div className="col-12 mb-5">
                             <InputText 
                                 label="Número do cartão" 
                                 change={ onChange }
                                 name="cardNumber"
                                 state={ model.cardNumber } />
+                        </div>
+                        <div className="col-12">
+                            <InputText 
+                                label="Nome (igual ao cartão)" 
+                                change={ onChange }
+                                name="name"
+                                state={ model.name } />
+                        </div>
+                    </div>
+                    <div className="row">
+                        <div className="col-6">
+                            <InputText 
+                                label="Validade" 
+                                change={ onChange }
+                                name="validity"
+                                mask="99/99"
+                                state={ model.validity } />
+                        </div>
+                        <div className="col-6">
+                            <InputText 
+                                label="CVV" 
+                                change={ onChange }
+                                name="cvv"
+                                state={ model.cvv } />
                         </div>
                     </div>
                 </div>

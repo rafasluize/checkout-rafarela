@@ -1,49 +1,32 @@
 @import '../../assets/scss/variables';
 
-.dropdown-custom{
-    .btn{
-        box-shadow: none !important;
-        background-color: $default;
-        color:#fff;
-        display: block;
-        width: 100%;
-        text-align: left;
-        &:hover{
-            background-color: $default;
-            color:#fff;
-        }
-        &::after {
-            content: " ";
-            background-image: url(/img/down-arrow.svg);
-            background-size: contain;
-            position: absolute;
-            right: 10px;
-            top: 25%;
-            pointer-events: none;
-            z-index: 99;
-            width: 15px;
-            height: 15px;
-        }
+
+
+.mdc-text-field{
+    .mdc-text-field__input {
+        border-color: #c9c9c9;
+        caret-color: $primary;
+    }
+    .mdc-line-ripple {
+        background-color: $primary;
     }
 
-    .dropdown-menu{
-        width: 100%;
-        background-color: $default;
-        margin-top: 0 !important;
-        padding: 0;
-        .dropdown-item{
-            color:#fff !important;
-            &:not(:last-child){
-            border-bottom: 1px solid #ccc;
-
-            }
-            &:hover{
-                background-color: $default;
-                border-color: #ddd
+    &:not(.mdc-text-field--disabled) {
+        background-color: #fff;
+        &.mdc-text-field--focused{
+            .mdc-floating-label{
+                color: $primary !important;
+                border-color: $primary !important
             }
         }
+        .mdc-floating-label, input{
+            color: #c9c9c9 !important;
+        }
     }
-}
+} 
+
+
+
 
 .input-required {
     .btn{

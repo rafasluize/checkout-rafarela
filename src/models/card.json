@@ -10,6 +10,7 @@
       "required": true,
       "value": "",
       "onlyNumber": true,
+      "maxlength": "16",
       "error": {}
     },
     "cvv": {
@@ -17,19 +18,21 @@
         "required": true,
         "value": "",
         "onlyNumber": true,
+        "maxlength": "3",
         "error": {}
       },
     "name": {
       "type": "text",
       "required": true,
       "value": "",
+      "maxlength": "150",
       "error": {}
     },
     "validity": {
         "type": "date",
         "required": true,
         "value": "",
-        "maxlength": "100",
+        "maxlength": "5",
         "error": {}
     }
 }

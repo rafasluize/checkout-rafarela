@@ -70,12 +70,11 @@ export default function InputText({
   const { error } = state;
 
   return(
-    <>
+    <div className={`input-text ${className}`}>
       <TextField
           label={label}
-          helperText={<HelperText>Help Me!</HelperText>}
           onTrailingIconSelect={() => this.setState({value: ''})}
-
+          className="w-100"
         >
           <Input
            ref={ inputEl }
@@ -89,7 +88,7 @@ export default function InputText({
            value={ value }
            />
         </TextField>
-    </>
+    </div>
   )
 }
 
@@ -98,6 +97,5 @@ InputText.propTypes = {
   type: PropTypes.string,
   change: PropTypes.func,
   name: PropTypes.string,
-  noSpecialChar: PropTypes.bool,
   state: PropTypes.object
 }
