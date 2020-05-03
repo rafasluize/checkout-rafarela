@@ -1,0 +1,79 @@
+@import '../../assets/scss/variables';
+
+.dropdown-custom{
+    .btn{
+        box-shadow: none !important;
+        background-color: $default;
+        color:#fff;
+        display: block;
+        width: 100%;
+        text-align: left;
+        &:hover{
+            background-color: $default;
+            color:#fff;
+        }
+        &::after {
+            content: " ";
+            background-image: url(/img/down-arrow.svg);
+            background-size: contain;
+            position: absolute;
+            right: 10px;
+            top: 25%;
+            pointer-events: none;
+            z-index: 99;
+            width: 15px;
+            height: 15px;
+        }
+    }
+
+    .dropdown-menu{
+        width: 100%;
+        background-color: $default;
+        margin-top: 0 !important;
+        padding: 0;
+        .dropdown-item{
+            color:#fff !important;
+            &:not(:last-child){
+            border-bottom: 1px solid #ccc;
+
+            }
+            &:hover{
+                background-color: $default;
+                border-color: #ddd
+            }
+        }
+    }
+}
+
+.input-required {
+    .btn{
+        background-color: #ffebee;
+        color:#C10000;
+        border-color: #C10000;
+        &::after {
+            background-image: url(/img/down-arrow-error.svg);
+        }
+        &:hover{
+            &::after {
+                background-image: url(/img/down-arrow.svg);
+            }
+        }
+    }
+    input.form-control {
+        background-color: #ffebee;
+        border: 1px solid #C10000 !important;
+    }
+  
+}
+
+
+
+.input-required select {
+  background-color: #ffebee;
+  border: 1px solid #FFE9E9 !important;
+}
+
+.input-message-error {
+  font-size: 1rem;
+  color: #C10000;
+}

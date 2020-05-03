@@ -1,12 +1,23 @@
-import React from 'react';
+import React, { useState } from 'react';
 import "./checkout.scss";
 import { Link } from 'react-router-dom';
 import { FiChevronLeft } from 'react-icons/fi';
 import SVGIcon from '../components/SVGIcon/SVGIcon';
 import Steps from '../components/steps/Steps';
 import {isMobile} from 'react-device-detect';
+import InputText from '../components/Input/InputText';
+import cardJSON from "../models/card.json";
+import { newObject, onChangeValue } from '../utils/utils';
 
 export default function Checkout() {
+	const [model, setModel] = useState(newObject(cardJSON));
+
+
+
+	function onChange(name, value) {
+		const obj = onChangeValue(name, value, model);
+		setModel(newObject(obj));
+    }
     return (
         <main className="checkout-rafarela d-flex">
             <div className="title-main p-5">
@@ -33,6 +44,19 @@ export default function Checkout() {
                     !isMobile &&
                     <Steps selected={2} />
                 }
+
+
+                <div className="form">
+                    <div className="row">
+                        <div className="col-12">
+                            <InputText 
+                                label="Número do cartão" 
+                                change={ onChange }
+                                name="cardNumber"
+                                state={ model.cardNumber } />
+                        </div>
+                    </div>
+                </div>
             </div>
         </main>
     )
