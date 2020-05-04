@@ -1,17 +1,20 @@
 @import "./variables";
+
 body {
-  margin: 0;
-  font-family: 'Verdana', sans-serif !important;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+	margin: 0;
+	font-family: 'Verdana', sans-serif !important;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
-body, html{
-  font-size: 16px;
+
+body,
+html {
+	font-size: 16px;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+	font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+		monospace;
 }
 
 ::-moz-selection {
@@ -24,13 +27,7 @@ code {
 	background-color: $primary !important
 }
 
-.bg-default {
-	background-color: $default !important;
-}
 
-.text-default {
-	color: #282828 !important;
-}
 
 .bg-primary {
 	background-color: $primary !important;
@@ -40,25 +37,100 @@ code {
 	color: $primary !important;
 }
 
-.border-primary {
-	border: 1px solid $primary !important;
+.btn {
+	border-radius: 10px;
+	letter-spacing: -0.01px;
+	font-weight: 500;
+	padding: 10px 30px;
+
+	&.btn-primary {
+		background-color: $primary !important;
+		border-color: $primary !important;
+
+		&:hover,
+		:active,
+		:focus {
+			background-color: $default !important;
+			border-color: $default !important;
+		}
+
+	}
 }
 
+.flip-vertical-left {
+	-webkit-animation: flip-vertical-left 0.4s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+	-moz-animation: flip-vertical-left 0.4s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+	-ms-animation: flip-vertical-left 0.4s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+	animation: flip-vertical-left 0.4s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+}
 
-.btn-primary {
-	background-color: $primary !important;
-	border-radius: 8px;
-	font-weight: 700;
-	color: $default !important;
-	border-color: $primary !important;
-	box-shadow: none !important;
+.flip-vertical-right {
+	-webkit-animation: flip-vertical-right 0.4s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+	-moz-animation: flip-vertical-right 0.4s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+	-ms-animation: flip-vertical-right 0.4s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+	animation: flip-vertical-right 0.4s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+}
 
-	&:hover,
-	:active,
-	:focus {
-		border-color: #00E600 !important;
-		box-shadow: 0px 3px 6px #00000040 !important;
-		color: #000 !important
+@-webkit-keyframes flip-vertical-left {
+	0% {
+		-webkit-transform: rotateY(-180deg);
+		-moz-transform: rotateY(-180deg);
+		-ms-transform: rotateY(-180deg);
+		transform: rotateY(-180deg);
 	}
 
+	100% {
+		-webkit-transform: rotateY(0);
+		-moz-transform: rotateY(0);
+		-ms-transform: rotateY(0);
+		transform: rotateY(0);
+	}
+}
+
+@keyframes flip-vertical-left {
+	0% {
+		-webkit-transform: rotateY(-180deg);
+		-moz-transform: rotateY(-180deg);
+		-ms-transform: rotateY(-180deg);
+		transform: rotateY(-180deg);
+	}
+
+	100% {
+		-webkit-transform: rotateY(0);
+		-moz-transform: rotateY(0);
+		-ms-transform: rotateY(0);
+		transform: rotateY(0);
+	}
+}
+
+@-webkit-keyframes flip-vertical-right {
+	0% {
+		-webkit-transform: rotateY(180deg);
+		-moz-transform: rotateY(180deg);
+		-ms-transform: rotateY(180deg);
+		transform: rotateY(180deg);
+	}
+
+	100% {
+		-webkit-transform: rotateY(0);
+		-moz-transform: rotateY(0);
+		-ms-transform: rotateY(0);
+		transform: rotateY(0);
+	}
+}
+
+@keyframes flip-vertical-right {
+	0% {
+		-webkit-transform: rotateY(180deg);
+		-moz-transform: rotateY(180deg);
+		-ms-transform: rotateY(180deg);
+		transform: rotateY(180deg);
+	}
+
+	100% {
+		-webkit-transform: rotateY(0);
+		-moz-transform: rotateY(0);
+		-ms-transform: rotateY(0);
+		transform: rotateY(0);
+	}
 }

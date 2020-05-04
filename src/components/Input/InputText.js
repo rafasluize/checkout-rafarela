@@ -2,8 +2,7 @@ import React, { useEffect, useState, useRef } from 'react';
 import PropTypes from 'prop-types';
 import './input.scss';
 import { maskJs } from 'mask-js';
-import _ from 'lodash';
-import TextField, {HelperText, Input} from '@material/react-text-field';
+import TextField, {Input} from '@material/react-text-field';
 
 export default function InputText({ 
   label, 
@@ -15,7 +14,8 @@ export default function InputText({
   state, 
   mask, 
   disabled, 
-  onBlur }) {
+  onBlur,
+  onFocus }) {
 
   const [ value, setValue ] = useState('');
   const inputEl = useRef();
@@ -66,6 +66,13 @@ export default function InputText({
     }
   }
 
+  function focus() {
+
+    if(onFocus) {
+      onFocus();
+    }
+  }
+
 
   const { error } = state;
 
@@ -85,6 +92,7 @@ export default function InputText({
            maxLength={ state.maxlength ? state.maxlength : "50" }
            onChange={ e => onChange(e) }
            onBlur={ blur }
+           onFocus={ focus }
            value={ value }
            />
         </TextField>

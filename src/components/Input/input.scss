@@ -1,6 +1,59 @@
 @import '../../assets/scss/variables';
 
 
+.dropdown-custom {
+    .dropdown {
+      width: 100%;
+    }
+    
+    .btn{
+      background-color: #fff;
+      border-radius: 0;
+      box-shadow: none !important;
+      color:#c9c9c9;
+      text-align: left;
+      border: none;
+      border-bottom: 1px solid #c9c9c9 !important;
+      &:hover, &:focus{
+          background-color: #fff !important;
+          border: none;
+          border-bottom: 1px solid $primary !important;    
+      }
+      &:focus{
+          color:$primary !important;
+    }
+      &::after {
+          content: " ";
+          background-image: url(/img/down-arrow.svg);
+          background-size: contain;
+          background-repeat: no-repeat;
+          position: absolute;
+          right: 10px;
+          top: 30%;
+          pointer-events: none;
+          z-index: 99;
+          width: 20px;
+          height: 16px;
+      }
+    }
+    .dropdown-menu{
+      width: 100%;
+      max-height: 300px;
+      overflow-y: auto;
+      .dropdown-item{
+        color:$default;
+        &:not(:last-child){
+          border-bottom: 1px solid #ccc;
+  
+          }
+          &:hover{
+              background-color: $default;
+              border-color: #ddd;
+              color: #fff;
+          }
+      }
+  }
+}
 
 .mdc-text-field{
     .mdc-text-field__input {
@@ -21,6 +74,7 @@
         }
         .mdc-floating-label, input{
             color: #c9c9c9 !important;
+            border-color: #c9c9c9 !important
         }
     }
 } 
