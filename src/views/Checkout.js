@@ -8,6 +8,11 @@ import InputText from '../components/Input/InputText';
 import cardJSON from "../models/card.json";
 import { newObject, onChangeValue } from '../utils/utils';
 import Combobox from '../components/Input/Combobox';
+import { validateFields } from '../utils/validateForm';
+import { convertModelToApi } from '../utils/convertValues';
+import { useDispatch } from 'react-redux';
+import { fetchPayment } from '../actions/PaymentAction';
+import Loading from '../components/Loading/Loading';
 
 export default function Checkout() {
     const [model, setModel] = useState(newObject(cardJSON));
@@ -15,7 +20,10 @@ export default function Checkout() {
     const [isMobile, setIsMobile] = useState(false);
     const [cardVerse, setCardVerse] = useState(false);
     const [ listInstallments, setListInstallments ] = useState([]);
-    
+    const dispatch = useDispatch();
+
+    const fetchPaymentAction = async () => dispatch(await fetchPayment());
+
 
     useEffect(() => {
         let installmentsList = [];
@@ -58,8 +66,26 @@ export default function Checkout() {
 		setModel(newObject(obj));
     }
 
+    async function onSave() {
+        const { isValid, objReturn } = validateFields(model);
+    
+        if(isValid) {
+          const objApi = newObject(convertModelToApi(model));
+
+          const response = await fetchPaymentAction(objApi);
+
+          console.log(response)
+
+        } else {
+          setModel(newObject(objReturn));
+        }
+        
+    }
+
+
     return (
         <main className="checkout-rafarela d-flex">
+            <Loading />
             <div className="title-main p-5">
                 {
                     isMobile ?
@@ -169,7 +195,7 @@ export default function Checkout() {
                                 state={ model.installment } />
                         </div>
                         <div className="col-8 offset-4 col-sm-7 offset-sm-5 col-md-6 offset-md-6 col-xl-5 offset-lg-7">
-                            <button className="btn btn-primary text-uppercase btn-block">Continuar</button>
+                            <button onClick={ onSave } className="btn btn-primary text-uppercase btn-block">Continuar</button>
                         </div>
                     </div>
                 </div>

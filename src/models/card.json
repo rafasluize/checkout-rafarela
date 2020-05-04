@@ -25,11 +25,11 @@
       "type": "text",
       "required": true,
       "value": "",
-      "maxlength": "150",
+      "maxlength": "50",
       "error": {}
     },
     "validity": {
-        "type": "date",
+        "type": "validity",
         "required": true,
         "value": "",
         "maxlength": "5",

@@ -5,7 +5,6 @@ import {FiCheck, FiChevronRight} from 'react-icons/fi';
 export default function Steps({selected}) {
     const steps = [{step: 1, title: 'Carrinho'}, {step:2, title:'Pagamento'}, {step:3, title: 'Confirmação'}];
     const listItems = steps.map((item, index) =>
-        <>
             <div key={index} className={`step ${((item.step === 1 && selected === 2) || (selected !== item.step && selected === 3)) ? 'checked' : ''}`}>
                 {
                     index !== 0 &&
@@ -22,7 +21,6 @@ export default function Steps({selected}) {
                 </span>
                 <span className="title">{item.title}</span>
             </div>
-        </>
     );
     return(
         <div className="steps d-flex align-items-center justify-content-center">{listItems}</div>

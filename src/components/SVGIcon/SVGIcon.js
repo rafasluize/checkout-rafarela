@@ -15,7 +15,7 @@ const getPath = (name, props) => {
 		case "card":
 			return(
 				<g transform="translate(-64 -55)">
-					<g fill="none" stroke="#fff" stroke-width="3px" transform="translate(64 55)">
+					<g fill="none" stroke="#fff" strokeWidth="3px" transform="translate(64 55)">
 						<circle stroke="none"  cx="25" cy="25" r="25" />
 						<circle fill="none" cx="25" cy="25" r="23.5" />
 					</g>

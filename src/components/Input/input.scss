@@ -84,9 +84,7 @@
 
 .input-required {
     .btn{
-        background-color: #ffebee;
-        color:#C10000;
-        border-color: #C10000;
+        border-color: #C10000 !important;
         &::after {
             background-image: url(/img/down-arrow-error.svg);
         }
@@ -96,21 +94,18 @@
             }
         }
     }
-    input.form-control {
-        background-color: #ffebee;
-        border: 1px solid #C10000 !important;
+    
+    .mdc-text-field {
+
+        .mdc-floating-label, input{
+            border-color: #C10000 !important
+        }
     }
   
 }
 
 
-
-.input-required select {
-  background-color: #ffebee;
-  border: 1px solid #FFE9E9 !important;
-}
-
 .input-message-error {
-  font-size: 1rem;
+  font-size: .8rem;
   color: #C10000;
 }

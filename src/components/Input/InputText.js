@@ -77,26 +77,33 @@ export default function InputText({
   const { error } = state;
 
   return(
-    <div className={`input-text ${className}`}>
-      <TextField
-          label={label}
-          onTrailingIconSelect={() => this.setState({value: ''})}
-          className="w-100"
-        >
-          <Input
-           ref={ inputEl }
-           type={ type === 'date' ? 'text' : type }
-           id={ name }
-           disabled={ disabled }
-           className={`mdc-text-field__input ${ error.isValid === false ? 'is-invalid' : '' } ${ state.value && error.isValid ? 'is-valid' : '' }`}
-           maxLength={ state.maxlength ? state.maxlength : "50" }
-           onChange={ e => onChange(e) }
-           onBlur={ blur }
-           onFocus={ focus }
-           value={ value }
-           />
-        </TextField>
+    <>
+      <div className={`input-text ${className} ${ error.isValid === false ? 'input-required' : '' }`}>
+        <TextField
+            label={label}
+            onTrailingIconSelect={() => this.setState({value: ''})}
+            className="w-100"
+          >
+            <Input
+            ref={ inputEl }
+            type={ type === 'date' ? 'text' : type }
+            id={ name }
+            disabled={ disabled }
+            className={`mdc-text-field__input ${ error.isValid === false ? 'is-invalid' : '' } ${ state.value && error.isValid ? 'is-valid' : '' }`}
+            maxLength={ state.maxlength ? state.maxlength : "50" }
+            onChange={ e => onChange(e) }
+            onBlur={ blur }
+            onFocus={ focus }
+            value={ value }
+            />
+          </TextField>
+      </div>
+      <div className="row">
+        <div className="col-12">
+            <p className="input-message-error mt-2 mb-0">{ error.msg }</p>
+        </div>
     </div>
+    </>
   )
 }
 
